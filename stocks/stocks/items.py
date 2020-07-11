@@ -13,4 +13,10 @@ class StocksItem(scrapy.Item):
     # name = scrapy.Field()
     name = scrapy.Field()
     bonuse = scrapy.Field()
-    pass
+
+
+class HKBuyStock(scrapy.Item):
+    code = scrapy.Field()
+    name = scrapy.Field()
+    shareholding = scrapy.Field()
+    shareholding_percent = scrapy.Field()
