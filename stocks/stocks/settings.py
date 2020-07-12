@@ -66,7 +66,8 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'stocks.pipelines.StocksPipeline': 300,
+    #'stocks.pipelines.StocksPipeline': 300,
+    'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline': 500
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -89,3 +90,13 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+ELASTICSEARCH_SERVERS = ['localhost']
+ELASTICSEARCH_INDEX = 'scrapy'
+ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m'
+ELASTICSEARCH_TYPE = 'items'
+ELASTICSEARCH_UNIQ_KEY = 'uuid'  # Custom unique key
+
+# can also accept a list of fields if need a composite key
+ELASTICSEARCH_UNIQ_KEY = 'uuid'

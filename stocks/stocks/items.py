@@ -20,3 +20,5 @@ class HKBuyStock(scrapy.Item):
     name = scrapy.Field()
     shareholding = scrapy.Field()
     shareholding_percent = scrapy.Field()
+    date = scrapy.Field()
+    uuid = scrapy.Field()
